@@ -1,0 +1,27 @@
+Sure, I can provide a code example to illustrate this concept. Let's consider a scenario where we are calculating the coordinates of a point in a 2D space based on some complex mathematical expressions.
+
+Here's the initial code:
+
+```python
+import math
+
+def calculate_point():
+    return (math.sqrt(16) * math.sin(math.radians(45)), math.sqrt(16) * math.cos(math.radians(45)))
+```
+
+In the above code, the expressions to calculate the x and y coordinates are complex and hard to understand at first glance. According to Kent Beck's advice, we should extract these expressions into separate variables that are named after the intention of the expression. Here's how we can refactor the code:
+
+```python
+import math
+
+def calculate_point():
+    radius = math.sqrt(16)
+    angle_in_radians = math.radians(45)
+    
+    x = radius * math.sin(angle_in_radians)
+    y = radius * math.cos(angle_in_radians)
+    
+    return (x, y)
+```
+
+In the refactored code, we have extracted the subexpressions into separate variables: `radius`, `angle_in_radians`, `x`, and `y`. This makes the code much easier to understand and modify in the future.
