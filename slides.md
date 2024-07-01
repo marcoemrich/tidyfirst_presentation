@@ -36,6 +36,21 @@ class: text-center
 </div>
 
 ---
+layout: image
+image: images/nue.png
+---
+
+---
+layout: image
+image: images/nue2.png
+---
+
+---
+layout: image
+image: images/nue3.png
+---
+
+---
 layout: two-cols
 ---
 
@@ -88,6 +103,12 @@ image: images/toc1.png
 ---
 
 <img src="images/book.png" w-90/>
+
+---
+layout: full
+---
+
+<img src="">
 
 
 ---
@@ -176,6 +197,70 @@ es hilf evtl in manchen Kontexten nicht von Refactoring zu sprechen
 Wenn Du das Problem nicht hast, kann Du gerne weiterhin von Refactoring sprechen.
 
 -->
+---
+
+# When to Tidy?
+
+---
+layout: image-right
+image: images/discussion.jpg
+class: text-center
+---
+# Discussion
+
+<div bg-yellow-100 rounded border-4 h-60 align-middle py-20 text-3xl>
+    <p>Why should we tidy?</p>
+    <p>When should we tidy?</p>
+</div>
+
+<div text-6xl my-20>5 min</div>
+
+---
+layout: image-left
+image: images/t-never3.png
+---
+
+# Tidy Never?
+
+ * "never changing this code again" - rare, but happens
+ * no learning
+
+---
+layout: image-left
+image: images/t-later.png
+---
+# Tidy Later?
+
+ * It might not happen? - excuse?
+ * Fun List (Tidy before the next feature)
+ * Creates Value ("reduce tax of messiness")
+ * As a learning tool
+ * Bring you joy (Motivation)
+
+---
+layout: image-left
+image: images/t-first3.png
+---
+
+# Tidy After?
+
+* "change the same area again. Soon."
+* "cheaper to tidy now."
+* "...Proportion to the cost of behavior changes."
+
+
+---
+layout: image-left
+image: images/t-first2.png
+---
+
+# Tidy First?
+
+ * "It Depends" ... but bias to...
+ * easier, than the messy change?
+ * Help your comprehension?
+ * amortize?
+
 
 ---
 layout: cover
