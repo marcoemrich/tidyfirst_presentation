@@ -28,12 +28,67 @@ class: text-center
 # Tidy First?
 
 <div text-3xl>
-  (Book by Kent Beck)
+  a Book by Kent Beck
 
-  Marco Emrich
+  Presentation by
 
-  codecentric
+  Marco Emrich (codecentric)
 </div>
+
+---
+layout: two-cols
+---
+
+# Facts about the book
+
+ * O'Reilly
+ * First of Three Books
+ * Concise, read it in one go
+ * ~120 pages
+
+:: right ::
+
+<img src="images/book.png" w-90/>
+
+---
+layout: two-cols
+---
+
+# German Version
+
+ * O'Reilly / DPunkt (German version)
+ * ~120 pages
+
+:: right ::
+
+<img src="images/book_de.jpeg" w-80/>
+
+---
+layout: two-cols
+---
+
+# My Role
+
+<img src="images/my_role.png" w-80/>
+
+
+:: right ::
+
+<img src="images/book_de.jpeg" w-80/>
+
+---
+layout: cover
+background: images/spoiler2.png
+---
+
+
+---
+layout: image-right
+image: images/toc1.png
+---
+
+<img src="images/book.png" w-90/>
+
 
 ---
 layout: image-right
@@ -53,6 +108,7 @@ layout: image-left
 image: images/discussion.jpg
 class: text-center
 ---
+
 # Discussion
 
 <div bg-yellow-100 rounded border-4 h-60 align-middle py-10 text-3xl>
@@ -67,7 +123,7 @@ layout: cover
 background: images/results.jpg
 class: text-center
 ---
-# Results
+<h1 mt-50 text-indigo-300>RESULTS!</h1>
 
 ---
 layout: image-left
@@ -181,8 +237,6 @@ function calculateDiscount(price: number, isHoliday: boolean, isVIP: boolean) {
 }
 ```
 
-<v-click>
-
 <arrow  x1="350" y1="240" x2="350" y2="350" color="#953" width="2" z-40 arrowSize="1" />
 
 <div mt-20>
@@ -198,7 +252,6 @@ function calculateDiscount(price: number, isHoliday: boolean, isVIP: boolean) {
 
 </div>
 
-</v-click>
 
 ---
 layout: two-cols
@@ -722,6 +775,15 @@ image: images/title.jpg
 * Explaining Comments
 * Delete Redundant Comments
 * even more...
+
+---
+layout: cover
+background: images/exercise4.png
+class: text-center
+---
+
+
+<h1 mt-105>EXERCISE</h1>
 
 ---
 
