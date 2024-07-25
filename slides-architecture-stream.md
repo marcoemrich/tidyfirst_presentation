@@ -45,7 +45,7 @@ image: /burn.jpg
 ---
 ---
 layout: image-right
-image: images/fuzzy.jpg
+image: /fuzzy.jpg
 class: text-2xl
 ---
 
@@ -81,7 +81,7 @@ zoom: 1.2
 
 <v-click>
 
-# Guard Clauses
+<h2>Guard Clauses</h2>
 
 </v-click>
 
@@ -149,7 +149,7 @@ layout: two-cols
 ---
 <v-click>
 
-# Dead Code
+<h2 mt--5>Dead Code</h2>
 
 </v-click>
 
@@ -274,7 +274,7 @@ zoom: 1.2
 
 <v-click>
 
-# Normalize Symmetries
+<h2 mt--5>Normalize Symmetries</h2>
 
 </v-click>
 
@@ -364,7 +364,7 @@ zoom: 1.1
 
 ---
 
-# New Interface, Old Implementation
+<h2 mt--5>New Interface, Old Implementation</h2>
 
 ```python
 class Database:
@@ -377,7 +377,7 @@ class Database:
     def disconnect(self):
         ...
 ```
-<arrow  x1="350" y1="245" x2="350" y2="310" color="#953" width="2" z-40 arrowSize="1" />
+<arrow  x1="350" y1="228" x2="350" y2="285" color="#953" width="2" z-40 arrowSize="1" />
 
 <div mt-10>
 
@@ -405,7 +405,7 @@ zoom: 1.2
 
 <v-click>
 
-# Reading Order
+<h2>Reading Order</h2>
 
 </v-click>
 
@@ -449,14 +449,55 @@ class Car:
 
 ```
 ````
+
+---
+
+<div mt--4>
+
+```python {*}{class:'!children:text-[14px]'}
+    def start_engine(self):
+        if self.check_battery():
+            print("Engine started.")
+        else:
+            print("Engine failed to start. Battery is dead.")
+
+    def __init__(self, make, model, year, color):
+        ...
+
+    def check_battery(self):
+        return datetime.datetime.now().year - self.year < 5
+```
+
+</div>
+
+<arrow  x1="350" y1="232" x2="350" y2="280" color="#953" width="2" z-40 arrowSize="1" />
+
+<div mt-10>
+
+```python {*}{class:'!children:text-[14px]'}
+    def __init__(self, make, model, year, color):
+        ...
+
+    def check_battery(self):
+        # For simplicity, let's assume the battery is good if the car is less than 5 years old
+        return datetime.datetime.now().year - self.year < 5
+
+    def start_engine(self):
+        if self.check_battery():
+            print("Engine started.")
+        else:
+            print("Engine failed to start. Battery is dead.")
+```
+</div>
 
 
 ---
 zoom: 1.1
 ---
 
-## Cohesion Order
-
+<v-click>
+    <h2 mt--7>Cohesion Order</h2>
+</v-click>
 
 ````md magic-move {lines: true}
 ```python
@@ -471,11 +512,11 @@ class ShoppingCart:
         else:
             print("Invalid discount code.")
 
-    def add_item(self, name, price, quantity):
-        self.items.append({'name': name, 'price': price, 'quantity': quantity})
-
     def calculate_item_total(self, item):
         return item['price'] * item['quantity']
+
+    def add_item(self, name, price, quantity):
+        self.items.append({'name': name, 'price': price, 'quantity': quantity})
 
     def calculate_total(self):
         ...
@@ -511,64 +552,171 @@ class ShoppingCart:
 ```
 ````
 
-
 ---
 
-# Move Declaration an Initialization Together
+<h2 mt--7>Cohesion Order</h2>
 
 
-```ts
-    let total: number;
-    // ...some code that doesn't use total
-    total = 0;
-    for (let item of items) {
-        let price: number;
-        // ...some more code, maybe it uses total but doesn't use price
-        price = item.price;
-        total += price * item.quantity;
-    }
-    return total;
+<div>
+
+```python {*}{class:'!children:text-[14px]'}
+    def __init__(self): ...
+
+    def apply_discount(self, code): ...
+
+    def calculate_item_total(self, item): ...
+
+    def add_item(self, name, price, quantity): ...
+
+    def calculate_total(self): ...
+
+    def is_valid_discount_code(self, code): ...
 ```
 
-<arrow  x1="350" y1="270" x2="350" y2="380" color="#953" width="2" z-40 arrowSize="1" />
+</div>
 
-<div mt-20>
+<arrow  x1="350" y1="255" x2="350" y2="308" color="#953" width="2" z-40 arrowSize="1" />
 
-```ts
-    let total = 0;
-    // ...some code that doesn't use total
-    for (let item of items) {
-        let price: number;
-        // ...some more code, maybe it uses total but doesn't use price
-        price = item.price;
-        total += price * item.quantity;
-    }
-    return total;
+<div mt-10>
+
+```python {*}{class:'!children:text-[14px]'}
+    def __init__(self): ...
+
+    def add_item(self, name, price, quantity): ...
+
+    def calculate_item_total(self, item): ...
+
+    def calculate_total(self): ...
+
+    def is_valid_discount_code(self, code): ..
+
+    def apply_discount(self, code): ...
 ```
 </div>
 
 ---
+zoom: 1.1
+---
 
+<v-click>
+
+<h2 mt--7>Move Declaration an Initialization Together</h2>
+
+</v-click>
+
+````md magic-move {lines: true}
+```ts
+let total: number;
+// ...some code that doesn't use total
+// ...some code that doesn't use total
+// ...some code that doesn't use total
+total = 0;
+for (let item of items) {
+    let price: number;
+    // ...some more code, maybe it uses total but doesn't use price
+    // ...some more code, maybe it uses total but doesn't use price
+    // ...some more code, maybe it uses total but doesn't use price
+    price = item.price;
+    total += price * item.quantity;
+}
+return total;
+
+```
+
+```ts
+let total = 0;
+// ...some code that doesn't use total
+// ...some code that doesn't use total
+// ...some code that doesn't use total
+for (let item of items) {
+    // ...some more code, maybe it uses total but doesn't use price
+    // ...some more code, maybe it uses total but doesn't use price
+    // ...some more code, maybe it uses total but doesn't use price
+    let price = item.price;
+    total += price * item.quantity;
+}
+return total;
+```
+````
+
+---
+
+<h2 mt--5>Move Declaration an Initialization Together</h2>
+
+```ts {*}{class:'!children:text-[14px]'}
+let total: number;
+// ...some code that doesn't use total
+total = 0;
+for (let item of items) {
+    let price: number;
+    // ...some more code, maybe it uses total but doesn't use price
+    price = item.price;
+    total += price * item.quantity;
+}
+return total;
+```
+
+<arrow  x1="350" y1="270" x2="350" y2="335" color="#953" width="2" z-40 arrowSize="1" />
+
+<div mt-10>
+
+```ts {*}{class:'!children:text-[14px]'}
+let total = 0;
+// ...some code that doesn't use total
+for (let item of items) {
+    let price: number;
+    // ...some more code, maybe it uses total but doesn't use price
+    price = item.price;
+    total += price * item.quantity;
+}
+return total;
+```
+</div>
+
+---
+zoom: 1.15
+
+---
 <v-click>
 
 # Explaining Variables
 
 </v-click>
 
+````md magic-move {lines: true}
+
 ```python
 def calculate_point():
     return (math.sqrt(16) * math.sin(math.radians(45)), math.sqrt(16) * math.cos(math.radians(45)))
 ```
 
+```python
+def calculate_point():
+    radius = math.sqrt(16)
+    angle_in_radians = math.radians(45)
 
-<v-click>
+    x = radius * math.sin(angle_in_radians)
+    y = radius * math.cos(angle_in_radians)
 
-<arrow  x1="350" y1="140" x2="350" y2="220" color="#953" width="2" z-40 arrowSize="1" />
+    return (x, y)
+```
+````
+
+
+---
+
+# Explaining Variables
+
+```python {*}{class:'!children:text-[14px]'}
+def calculate_point():
+    return (math.sqrt(16) * math.sin(math.radians(45)), math.sqrt(16) * math.cos(math.radians(45)))
+```
+
+<arrow  x1="350" y1="150" x2="350" y2="237" color="#953" width="2" z-40 arrowSize="1" />
 
 <div mt-20>
 
-
-```python
+```python {*}{class:'!children:text-[14px]'}
 def calculate_point():
     radius = math.sqrt(16)
     angle_in_radians = math.radians(45)
@@ -581,13 +729,18 @@ def calculate_point():
 
 </div>
 
-</v-click>
-
 ---
+zoom: 1.15
+---
+
+<v-click>
 
 # Explaining Constants
 
-```ts
+</v-click>
+
+````md magic-move {lines: true}
+```ts {*}{class:'!children:text-[14px]'}
 function handleResponse(response: {code: number, data: any}): void {
     if (response.code === 404) {
         console.log("Page not found.");
@@ -597,13 +750,39 @@ function handleResponse(response: {code: number, data: any}): void {
 }
 ```
 
-<v-click>
 
-<arrow  x1="350" y1="240" x2="350" y2="320" color="#953" width="2" z-40 arrowSize="1" />
+```ts {*}{class:'!children:text-[14px]'}
+const PAGE_NOT_FOUND = 404;
+const SUCCESS = 200;
 
-<div mt-20>
+function handleResponse(response: {code: number, data: any}): void {
+    if (response.code === PAGE_NOT_FOUND) {
+        console.log("Page not found.");
+    } else if (response.code === SUCCESS) {
+        console.log("Success!");
+    }
+}
+```
+````
+---
 
-```ts
+## Explaining Constants
+
+```ts {*}{class:'!children:text-[14px]'}
+function handleResponse(response: {code: number, data: any}): void {
+    if (response.code === 404) {
+        console.log("Page not found.");
+    } else if (response.code === 200) {
+        console.log("Success!");
+    }
+}
+```
+
+<arrow  x1="350" y1="236" x2="350" y2="302" color="#953" width="2" z-40 arrowSize="1" />
+
+<div mt-13>
+
+```ts {*}{class:'!children:text-[14px]'}
 const PAGE_NOT_FOUND = 404;
 const SUCCESS = 200;
 
@@ -619,41 +798,72 @@ function handleResponse(response: {code: number, data: any}): void {
 
 </div>
 
-</v-click>
+---
+zoom: 1.1
+---
 
+## Explicit Parameters
+
+````md magic-move {lines: true}
+```java
+public static void main(String[] args) {
+    HashMap<String, Integer> params = new HashMap<>();
+    params.put("width", 10);
+    params.put("height", 20);
+    calculateArea(params);
+}
+static void calculateArea(HashMap<String, Integer> params) {
+    int area = params.get("width") * params.get("height");
+    System.out.println("Area: " + area);
+}
+```
+
+```java
+public static void main(String[] args) {
+    HashMap<String, Integer> params = new HashMap<>();
+    params.put("width", 10);
+    params.put("height", 20);
+    calculateArea(params.get("width"), params.get("height"));
+}
+static void calculateArea(int width, int height) {
+    int area = width * height;
+    System.out.println("Area: " + area);
+}
+```
+````
 
 ---
 
-# Explicit Parameters
+<h2 mt--7>Explicit Parameters</h2>
 
-```java
-    public static void main(String[] args) {
-        HashMap<String, Integer> params = new HashMap<>();
-        params.put("width", 10);
-        params.put("height", 20);
-        calculateArea(params);
-    }
-    static void calculateArea(HashMap<String, Integer> params) {
-        int area = params.get("width") * params.get("height");
-        System.out.println("Area: " + area);
-    }
+```java {*}{class:'!children:text-[14px]'}
+public static void main(String[] args) {
+    HashMap<String, Integer> params = new HashMap<>();
+    params.put("width", 10);
+    params.put("height", 20);
+    calculateArea(params);
+}
+static void calculateArea(HashMap<String, Integer> params) {
+    int area = params.get("width") * params.get("height");
+    System.out.println("Area: " + area);
+}
 ```
 
-<arrow x1="350" y1="270" x2="350" y2="340" color="#953" width="2" z-40 arrowSize="1" />
+<arrow x1="350" y1="267" x2="350" y2="323" color="#953" width="2" z-40 arrowSize="1" />
 
 <div mt-10>
 
-```java
-    public static void main(String[] args) {
-        HashMap<String, Integer> params = new HashMap<>();
-        params.put("width", 10);
-        params.put("height", 20);
-        calculateArea(params.get("width"), params.get("height"));
-    }
-    static void calculateArea(int width, int height) {
-        int area = width * height;
-        System.out.println("Area: " + area);
-    }
+```java {*}{class:'!children:text-[14px]'}
+public static void main(String[] args) {
+    HashMap<String, Integer> params = new HashMap<>();
+    params.put("width", 10);
+    params.put("height", 20);
+    calculateArea(params.get("width"), params.get("height"));
+}
+static void calculateArea(int width, int height) {
+    int area = width * height;
+    System.out.println("Area: " + area);
+}
 ```
 
 </div>
