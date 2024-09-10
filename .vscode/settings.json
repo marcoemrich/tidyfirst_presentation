@@ -1,0 +1,9 @@
+{
+  "slidev.force-enabled": true,
+  "slidev.include": [
+    "**/slides.md",
+    "slides-swk-meetup.md",
+    "slides-architecture-stream.md",
+    "README.md"
+  ]
+}

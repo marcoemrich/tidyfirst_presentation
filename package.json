@@ -3,17 +3,17 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build",
-    "dev": "slidev  --open slides-architecture-stream.md",
-    "export": "slidev build --download slides-architecture-stream.md && mv dist/slidev-exported.pdf ."
+    "build": "slidev build slides-socrates-2024.md",
+    "dev": "slidev  --open slides-socrates-2024.md",
+    "export": "slidev build --download slides-socrates-2024.md && mv dist/slidev-exported.pdf ."
   },
   "dependencies": {
-    "@slidev/cli": "^0.49.12",
+    "@slidev/cli": "^0.49.10",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "vue": "^3.4.30"
   },
   "devDependencies": {
-    "playwright-chromium": "^1.45.3"
+    "playwright-chromium": "^1.44.1"
   }
 }

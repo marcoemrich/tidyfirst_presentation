@@ -31,21 +31,6 @@ background: title.jpg
 </div>
 
 ---
-layout: image
-image: nue.png
----
-
----
-layout: image
-image: nue2.png
----
-
----
-layout: image
-image: nue3.png
----
-
----
 layout: two-cols
 ---
 
@@ -58,7 +43,7 @@ layout: two-cols
 
 :: right ::
 
-<img src="book.png" w-90/>
+<img src="/book.png" w-90/>
 
 ---
 layout: two-cols
@@ -71,7 +56,7 @@ layout: two-cols
 
 :: right ::
 
-<img src="book_de.jpeg" w-80/>
+<img src="/book_de.jpeg" w-80/>
 
 ---
 layout: two-cols
@@ -79,12 +64,12 @@ layout: two-cols
 
 # My Role
 
-<img src="my_role.png" w-80/>
+<img src="/my_role.png" w-80/>
 
 
 :: right ::
 
-<img src="book_de.jpeg" w-80/>
+<img src="/book_de.jpeg" w-80/>
 
 ---
 layout: cover
@@ -97,13 +82,13 @@ layout: image-right
 image: toc1.png
 ---
 
-<img src="book.png" w-90/>
+<img src="/book.png" w-90/>
 
 ---
 layout: full
 ---
 
-<img src="toc2.png">
+<img src="/toc2.png">
 
 
 ---
@@ -265,7 +250,7 @@ class: text-center
 
 # Tidyings!
 
-<img src="tidyings.png" absolute top-0 right-0 w-90>
+<img src="/tidyings.png" absolute top-0 right-0 w-90>
 
 
 ---
@@ -328,7 +313,7 @@ function calculateDiscount(price: number, isHoliday: boolean, isVIP: boolean) {
 
     return price * 0.1;
 }
-```q
+```
 
 </div>
 
@@ -856,14 +841,6 @@ image: title.jpg
 * Delete Redundant Comments
 * even more...
 
----
-layout: image
-image: exercise4.png
-class: text-center
----
-
-
-<h1 mt-80 ml--100>EXERCISE</h1>
 
 ---
 layout: image

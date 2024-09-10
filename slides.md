@@ -1,12 +1,9 @@
 ---
 # You can also start simply with 'default'
 theme: default
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
 title: Tidy First
 info: |
   ## Tidy First
-class: text-center
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
 # https://sli.dev/guide/drawing
@@ -16,171 +13,43 @@ drawings:
 transition: none
 # enable MDC Syntax: https://sli.dev/guide/syntax#mdc-syntax
 mdc: true
-layout: cover
-background: title.jpg
----
-
-# Tidy First?
-
-<div text-3xl>
-  a Book by Kent Beck
-
-  Presentation by
-
-  Marco Emrich (codecentric)
-</div>
-
----
-layout: image
-image: nue.png
----
-
----
-layout: image
-image: nue2.png
----
-
----
-layout: image
-image: nue3.png
----
-
----
-layout: two-cols
----
-
-# Facts about the book
-
- * O'Reilly
- * First of Three Books
- * Concise, read it in one go
- * ~120 pages
-
-:: right ::
-
-<img src="book.png" w-90/>
-
----
-layout: two-cols
----
-
-# German Version
-
- * O'Reilly / DPunkt (German version)
- * ~120 pages
-
-:: right ::
-
-<img src="book_de.jpeg" w-80/>
-
----
-layout: two-cols
----
-
-# My Role
-
-<img src="my_role.png" w-80/>
-
-
-:: right ::
-
-<img src="book_de.jpeg" w-80/>
-
----
-layout: cover
-background: spoiler2.png
----
-
-
----
-layout: image-right
-image: toc1.png
----
-
-<img src="book.png" w-90/>
-
----
-layout: full
----
-
-<img src="toc2.png">
-
-
----
-layout: image-right
-image: discussion.jpg
-class: text-center
----
-# Discussion
-
-<div bg-yellow-100 rounded border-4 h-60 align-middle py-20 text-3xl>
-    <p>What is Refactoring</p>
-    <p>...for you?</p>
-</div>
-
-<div text-6xl my-20>5 min</div>
----
 layout: image-left
-image: discussion.jpg
-class: text-center
----
-
-# Discussion
-
-<div bg-yellow-100 rounded border-4 h-60 align-middle py-10 text-3xl>
-    <p>What do your company think of refactoring?</p>
-    <p>... what your managers?</p>
-</div>
-
-<div text-6xl my-20>5 min</div>
-
----
-layout: cover
-background: results.jpg
-class: text-center
----
-<h1 mt-50 text-indigo-300>RESULTS!</h1>
-
----
-layout: image-left
-image: fowler.jpg
+image: /fowler.jpg
 class: text-2xl
 ---
 
-## Definition
+# Definition
 
-**Refactoring (verb)**: to restructure software by applying a series of refactorings without changing its observable behavior.
+**Refactoring (Verb)**: Umstrukturierung von Software durch Anwendung einer Reihe von Refactorings, ohne das beobachtbare Verhalten der Software zu ändern.
 
-**Refactoring (noun)**: a change made to the internal structure of software to make it easier to understand and cheaper to modify without changing its observable behavior.
+**Refactoring (Substantiv)**: eine Änderung der internen Struktur einer Software, um sie verständlicher und einfacher modifizierbar zu machen, ohne das beobachtbare Verhalten zu verändern.
 
 
 <p>&mdash; Martin Fowler</p>
 
 ---
 layout: image-right
-image: beck.jpeg
+image: /beck.jpeg
 class: text-2xl
 ---
 
-“Refactoring” took fatal damage when folks started using it to refer to long pauses in feature development.
+"Refactoring" hat ernsthaften Schaden genommen, als die Leute begannen, damit lange Pausen bei der Feature-Entwicklung zu erklären.
 
-They even eliminated the “that don’t change behavior” clause, so “refactoring” could easily break the system. Let’s see: no new features, possible damage, and nothing to show for it at the end. No thank you.
-
+Dabei verschwand sogar der Teil mit dem »Verhalten beibehalten«, sodass ein Refactoring das System problemlos aus dem Tritt bringen kann. Keine neuen Features, möglicher Schaden und nichts, was man am Ende vorzeigen kann. Danke, ich verzichte.
 
 <p>&mdash; Kent Beck</p>
 
 ---
 layout: image
-image: burn.jpg
+image: /burn.jpg
 ---
 ---
 layout: image-right
-image: fuzzy.jpg
+image: /fuzzy.jpg
 class: text-2xl
 ---
 
-Tidyings are the cute, fuzzy little refactorings that nobody
-could possibly hate on.
+Aufräumereien sind eine Untermenge der Refactorings. Sie sind niedliche, knuddelige kleine Refactorings, die niemand wirklich hassen kann.
 
 <p>&mdash; Kent Beck</p>
 
@@ -192,92 +61,32 @@ es hilf evtl in manchen Kontexten nicht von Refactoring zu sprechen
 Wenn Du das Problem nicht hast, kann Du gerne weiterhin von Refactoring sprechen.
 
 -->
----
-
-# When to Tidy?
-
----
-layout: image-right
-image: discussion.jpg
-class: text-center
----
-# Discussion
-
-<div bg-yellow-100 rounded border-4 h-60 align-middle py-20 text-3xl>
-    <p>Why should we tidy?</p>
-    <p>When should we tidy?</p>
-</div>
-
-<div text-6xl my-20>5 min</div>
-
----
-layout: image-left
-image: t-never3.png
----
-
-# Tidy Never?
-
- * "never changing this code again" - rare, but happens
- * no learning
-
----
-layout: image-left
-image: t-later.png
----
-# Tidy Later?
-
- * It might not happen? - excuse?
- * Fun List (Tidy before the next feature)
- * Creates Value ("reduce tax of messiness")
- * As a learning tool
- * Bring you joy (Motivation)
-
----
-layout: image-left
-image: t-first3.png
----
-
-# Tidy After?
-
-* "change the same area again. Soon."
-* "cheaper to tidy now."
-* "...Proportion to the cost of behavior changes."
-
-
----
-layout: image-left
-image: t-first2.png
----
-
-# Tidy First?
-
- * "It Depends" ... but bias to...
- * easier, than the messy change?
- * Help your comprehension?
- * amortize?
-
 
 ---
 layout: cover
-background: title.jpg
+background: /title.jpg
 class: text-center
 ---
 
 # Tidyings!
 
-<img src="tidyings.png" absolute top-0 right-0 w-90>
+<img src="/tidyings.png" absolute top-0 right-0 w-90>
 
 
 ---
+zoom: 1.2
+
+---
+
 
 <v-click>
 
-# Guard Clauses
+<h2>Guard Clauses</h2>
 
 </v-click>
 
 ````md magic-move {lines: true}
-```ts
+```ts{*}{class:'!children:text-[18px]'}
 function calculateDiscount(price: number, isHoliday: boolean, isVIP: boolean) {
     let discount = 0;
     if (isHoliday) {
@@ -305,7 +114,9 @@ function calculateDiscount(price: number, isHoliday: boolean, isVIP: boolean) {
 
 # Guard Clauses
 
-```ts
+<div></div>
+
+```ts {*}{class:'!children:text-[14px]'}
 function calculateDiscount(price: number, isHoliday: boolean, isVIP: boolean) {
     let discount = 0;
     if (isHoliday) {
@@ -317,18 +128,18 @@ function calculateDiscount(price: number, isHoliday: boolean, isVIP: boolean) {
 }
 ```
 
-<arrow  x1="350" y1="240" x2="350" y2="350" color="#953" width="2" z-40 arrowSize="1" />
+<arrow  x1="350" y1="280" x2="350" y2="382" color="#953" width="2" z-40 arrowSize="1" />
 
 <div mt-20>
 
-```typescript
+```ts{*}{class:'!children:text-[14px]'}
 function calculateDiscount(price: number, isHoliday: boolean, isVIP: boolean) {
     if (!isHoliday) return 0;
     if (isVIP) return 0;
 
     return price * 0.1;
 }
-```q
+```
 
 </div>
 
@@ -338,7 +149,7 @@ layout: two-cols
 ---
 <v-click>
 
-# Dead Code
+<h2 mt--5>Dead Code</h2>
 
 </v-click>
 
@@ -458,10 +269,12 @@ const specialTransactionPrint =
 
 
 ---
+zoom: 1.2
+---
 
 <v-click>
 
-# Normalize Symmetries
+<h2 mt--5>Normalize Symmetries</h2>
 
 </v-click>
 
@@ -506,6 +319,7 @@ public class Person {
 ````
 ---
 layout: default
+zoom: 1.1
 ---
 
 <div mt--10>
@@ -527,10 +341,10 @@ layout: default
 ```
 </div>
 
-<arrow  x1="350" y1="245" x2="350" y2="330" color="#953" width="2" z-40 arrowSize="1" />
+<arrow  x1="350" y1="245" x2="350" y2="300" color="#953" width="2" z-40 arrowSize="1" />
 
 
-<div mt-20>
+<div mt-10>
 
 ```java
     public String getFullName() {
@@ -550,7 +364,7 @@ layout: default
 
 ---
 
-# New Interface, Old Implementation
+<h2 mt--5>New Interface, Old Implementation</h2>
 
 ```python
 class Database:
@@ -563,7 +377,7 @@ class Database:
     def disconnect(self):
         ...
 ```
-<arrow  x1="350" y1="245" x2="350" y2="310" color="#953" width="2" z-40 arrowSize="1" />
+<arrow  x1="350" y1="228" x2="350" y2="285" color="#953" width="2" z-40 arrowSize="1" />
 
 <div mt-10>
 
@@ -586,10 +400,12 @@ db.execute_query("url", "username", "password", "SELECT * FROM table")
 ```
 
 ---
+zoom: 1.2
+---
 
 <v-click>
 
-# Reading Order
+<h2>Reading Order</h2>
 
 </v-click>
 
@@ -634,12 +450,54 @@ class Car:
 ```
 ````
 
-
 ---
 
+<div mt--4>
 
-# Cohesion Order
+```python {*}{class:'!children:text-[14px]'}
+    def start_engine(self):
+        if self.check_battery():
+            print("Engine started.")
+        else:
+            print("Engine failed to start. Battery is dead.")
 
+    def __init__(self, make, model, year, color):
+        ...
+
+    def check_battery(self):
+        return datetime.datetime.now().year - self.year < 5
+```
+
+</div>
+
+<arrow  x1="350" y1="232" x2="350" y2="280" color="#953" width="2" z-40 arrowSize="1" />
+
+<div mt-10>
+
+```python {*}{class:'!children:text-[14px]'}
+    def __init__(self, make, model, year, color):
+        ...
+
+    def check_battery(self):
+        # For simplicity, let's assume the battery is good if the car is less than 5 years old
+        return datetime.datetime.now().year - self.year < 5
+
+    def start_engine(self):
+        if self.check_battery():
+            print("Engine started.")
+        else:
+            print("Engine failed to start. Battery is dead.")
+```
+</div>
+
+
+---
+zoom: 1.1
+---
+
+<v-click>
+    <h2 mt--7>Cohesion Order</h2>
+</v-click>
 
 ````md magic-move {lines: true}
 ```python
@@ -654,11 +512,11 @@ class ShoppingCart:
         else:
             print("Invalid discount code.")
 
-    def add_item(self, name, price, quantity):
-        self.items.append({'name': name, 'price': price, 'quantity': quantity})
-
     def calculate_item_total(self, item):
         return item['price'] * item['quantity']
+
+    def add_item(self, name, price, quantity):
+        self.items.append({'name': name, 'price': price, 'quantity': quantity})
 
     def calculate_total(self):
         ...
@@ -694,64 +552,171 @@ class ShoppingCart:
 ```
 ````
 
-
 ---
 
-# Move Declaration an Initialization Together
+<h2 mt--7>Cohesion Order</h2>
 
 
-```ts
-    let total: number;
-    // ...some code that doesn't use total
-    total = 0;
-    for (let item of items) {
-        let price: number;
-        // ...some more code, maybe it uses total but doesn't use price
-        price = item.price;
-        total += price * item.quantity;
-    }
-    return total;
+<div>
+
+```python {*}{class:'!children:text-[14px]'}
+    def __init__(self): ...
+
+    def apply_discount(self, code): ...
+
+    def calculate_item_total(self, item): ...
+
+    def add_item(self, name, price, quantity): ...
+
+    def calculate_total(self): ...
+
+    def is_valid_discount_code(self, code): ...
 ```
 
-<arrow  x1="350" y1="270" x2="350" y2="380" color="#953" width="2" z-40 arrowSize="1" />
+</div>
 
-<div mt-20>
+<arrow  x1="350" y1="255" x2="350" y2="308" color="#953" width="2" z-40 arrowSize="1" />
 
-```ts
-    let total = 0;
-    // ...some code that doesn't use total
-    for (let item of items) {
-        let price: number;
-        // ...some more code, maybe it uses total but doesn't use price
-        price = item.price;
-        total += price * item.quantity;
-    }
-    return total;
+<div mt-10>
+
+```python {*}{class:'!children:text-[14px]'}
+    def __init__(self): ...
+
+    def add_item(self, name, price, quantity): ...
+
+    def calculate_item_total(self, item): ...
+
+    def calculate_total(self): ...
+
+    def is_valid_discount_code(self, code): ..
+
+    def apply_discount(self, code): ...
 ```
 </div>
 
 ---
+zoom: 1.1
+---
 
+<v-click>
+
+<h2 mt--7>Move Declaration an Initialization Together</h2>
+
+</v-click>
+
+````md magic-move {lines: true}
+```ts
+let total: number;
+// ...some code that doesn't use total
+// ...some code that doesn't use total
+// ...some code that doesn't use total
+total = 0;
+for (let item of items) {
+    let price: number;
+    // ...some more code, maybe it uses total but doesn't use price
+    // ...some more code, maybe it uses total but doesn't use price
+    // ...some more code, maybe it uses total but doesn't use price
+    price = item.price;
+    total += price * item.quantity;
+}
+return total;
+
+```
+
+```ts
+let total = 0;
+// ...some code that doesn't use total
+// ...some code that doesn't use total
+// ...some code that doesn't use total
+for (let item of items) {
+    // ...some more code, maybe it uses total but doesn't use price
+    // ...some more code, maybe it uses total but doesn't use price
+    // ...some more code, maybe it uses total but doesn't use price
+    let price = item.price;
+    total += price * item.quantity;
+}
+return total;
+```
+````
+
+---
+
+<h2 mt--5>Move Declaration an Initialization Together</h2>
+
+```ts {*}{class:'!children:text-[14px]'}
+let total: number;
+// ...some code that doesn't use total
+total = 0;
+for (let item of items) {
+    let price: number;
+    // ...some more code, maybe it uses total but doesn't use price
+    price = item.price;
+    total += price * item.quantity;
+}
+return total;
+```
+
+<arrow  x1="350" y1="270" x2="350" y2="335" color="#953" width="2" z-40 arrowSize="1" />
+
+<div mt-10>
+
+```ts {*}{class:'!children:text-[14px]'}
+let total = 0;
+// ...some code that doesn't use total
+for (let item of items) {
+    let price: number;
+    // ...some more code, maybe it uses total but doesn't use price
+    price = item.price;
+    total += price * item.quantity;
+}
+return total;
+```
+</div>
+
+---
+zoom: 1.15
+
+---
 <v-click>
 
 # Explaining Variables
 
 </v-click>
 
+````md magic-move {lines: true}
+
 ```python
 def calculate_point():
     return (math.sqrt(16) * math.sin(math.radians(45)), math.sqrt(16) * math.cos(math.radians(45)))
 ```
 
+```python
+def calculate_point():
+    radius = math.sqrt(16)
+    angle_in_radians = math.radians(45)
 
-<v-click>
+    x = radius * math.sin(angle_in_radians)
+    y = radius * math.cos(angle_in_radians)
 
-<arrow  x1="350" y1="140" x2="350" y2="220" color="#953" width="2" z-40 arrowSize="1" />
+    return (x, y)
+```
+````
+
+
+---
+
+# Explaining Variables
+
+```python {*}{class:'!children:text-[14px]'}
+def calculate_point():
+    return (math.sqrt(16) * math.sin(math.radians(45)), math.sqrt(16) * math.cos(math.radians(45)))
+```
+
+<arrow  x1="350" y1="150" x2="350" y2="237" color="#953" width="2" z-40 arrowSize="1" />
 
 <div mt-20>
 
-
-```python
+```python {*}{class:'!children:text-[14px]'}
 def calculate_point():
     radius = math.sqrt(16)
     angle_in_radians = math.radians(45)
@@ -764,13 +729,18 @@ def calculate_point():
 
 </div>
 
-</v-click>
-
 ---
+zoom: 1.15
+---
+
+<v-click>
 
 # Explaining Constants
 
-```ts
+</v-click>
+
+````md magic-move {lines: true}
+```ts {*}{class:'!children:text-[14px]'}
 function handleResponse(response: {code: number, data: any}): void {
     if (response.code === 404) {
         console.log("Page not found.");
@@ -780,13 +750,39 @@ function handleResponse(response: {code: number, data: any}): void {
 }
 ```
 
-<v-click>
 
-<arrow  x1="350" y1="240" x2="350" y2="320" color="#953" width="2" z-40 arrowSize="1" />
+```ts {*}{class:'!children:text-[14px]'}
+const PAGE_NOT_FOUND = 404;
+const SUCCESS = 200;
 
-<div mt-20>
+function handleResponse(response: {code: number, data: any}): void {
+    if (response.code === PAGE_NOT_FOUND) {
+        console.log("Page not found.");
+    } else if (response.code === SUCCESS) {
+        console.log("Success!");
+    }
+}
+```
+````
+---
 
-```ts
+## Explaining Constants
+
+```ts {*}{class:'!children:text-[14px]'}
+function handleResponse(response: {code: number, data: any}): void {
+    if (response.code === 404) {
+        console.log("Page not found.");
+    } else if (response.code === 200) {
+        console.log("Success!");
+    }
+}
+```
+
+<arrow  x1="350" y1="236" x2="350" y2="302" color="#953" width="2" z-40 arrowSize="1" />
+
+<div mt-13>
+
+```ts {*}{class:'!children:text-[14px]'}
 const PAGE_NOT_FOUND = 404;
 const SUCCESS = 200;
 
@@ -802,41 +798,72 @@ function handleResponse(response: {code: number, data: any}): void {
 
 </div>
 
-</v-click>
+---
+zoom: 1.1
+---
 
+## Explicit Parameters
+
+````md magic-move {lines: true}
+```java
+public static void main(String[] args) {
+    HashMap<String, Integer> params = new HashMap<>();
+    params.put("width", 10);
+    params.put("height", 20);
+    calculateArea(params);
+}
+static void calculateArea(HashMap<String, Integer> params) {
+    int area = params.get("width") * params.get("height");
+    System.out.println("Area: " + area);
+}
+```
+
+```java
+public static void main(String[] args) {
+    HashMap<String, Integer> params = new HashMap<>();
+    params.put("width", 10);
+    params.put("height", 20);
+    calculateArea(params.get("width"), params.get("height"));
+}
+static void calculateArea(int width, int height) {
+    int area = width * height;
+    System.out.println("Area: " + area);
+}
+```
+````
 
 ---
 
-# Explicit Parameters
+<h2 mt--7>Explicit Parameters</h2>
 
-```java
-    public static void main(String[] args) {
-        HashMap<String, Integer> params = new HashMap<>();
-        params.put("width", 10);
-        params.put("height", 20);
-        calculateArea(params);
-    }
-    static void calculateArea(HashMap<String, Integer> params) {
-        int area = params.get("width") * params.get("height");
-        System.out.println("Area: " + area);
-    }
+```java {*}{class:'!children:text-[14px]'}
+public static void main(String[] args) {
+    HashMap<String, Integer> params = new HashMap<>();
+    params.put("width", 10);
+    params.put("height", 20);
+    calculateArea(params);
+}
+static void calculateArea(HashMap<String, Integer> params) {
+    int area = params.get("width") * params.get("height");
+    System.out.println("Area: " + area);
+}
 ```
 
-<arrow x1="350" y1="270" x2="350" y2="340" color="#953" width="2" z-40 arrowSize="1" />
+<arrow x1="350" y1="267" x2="350" y2="323" color="#953" width="2" z-40 arrowSize="1" />
 
 <div mt-10>
 
-```java
-    public static void main(String[] args) {
-        HashMap<String, Integer> params = new HashMap<>();
-        params.put("width", 10);
-        params.put("height", 20);
-        calculateArea(params.get("width"), params.get("height"));
-    }
-    static void calculateArea(int width, int height) {
-        int area = width * height;
-        System.out.println("Area: " + area);
-    }
+```java {*}{class:'!children:text-[14px]'}
+public static void main(String[] args) {
+    HashMap<String, Integer> params = new HashMap<>();
+    params.put("width", 10);
+    params.put("height", 20);
+    calculateArea(params.get("width"), params.get("height"));
+}
+static void calculateArea(int width, int height) {
+    int area = width * height;
+    System.out.println("Area: " + area);
+}
 ```
 
 </div>
@@ -844,7 +871,7 @@ function handleResponse(response: {code: number, data: any}): void {
 
 ---
 layout: image-left
-image: title.jpg
+image: /title.jpg
 ---
 
 # More Tidyings
@@ -857,15 +884,12 @@ image: title.jpg
 * even more...
 
 ---
-layout: image
-image: exercise4.png
+layout: cover
+background: /title.jpg
 class: text-center
 ---
 
+# Tidyings!
 
-<h1 mt-80 ml--100>EXERCISE</h1>
+<img src="/tidyings.png" absolute top-0 right-0 w-90>
 
----
-layout: image
-image: thankyou.png
----
