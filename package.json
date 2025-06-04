@@ -3,9 +3,9 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build slides-software-quality-days.md",
-    "dev": "slidev  --open slides-software-quality-days.md",
-    "export": "slidev build --download slides-software-quality-days.md && mv dist/slidev-exported.pdf ."
+    "build": "slidev build slides-ket.md",
+    "dev": "slidev  --open slides-ket.md",
+    "export": "slidev build --download slides-ket.md && mv dist/slidev-exported.pdf ."
   },
   "dependencies": {
     "@slidev/cli": "^0.49.10",
